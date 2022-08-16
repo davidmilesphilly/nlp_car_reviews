@@ -160,3 +160,14 @@ from sklearn.metrics import f1_score
 svm_f1_score =f1_score(test_y, clf_svm.predict(test_x_vectors), average=None, labels= [Sentiment.Positive, Sentiment.Negative])
 print("The F1 scores for svm is", svm_f1_score)
 
+print("Enter a positive or negative review:")
+
+test_review = input()
+
+new_test = [test_review]
+
+new_test = vec.transform(new_test)
+
+
+prediction = clf_svm.predict(new_test)
+print(prediction)
